@@ -1,0 +1,486 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* VARIABLES */
+:root {
+    --primaryTextColor: #005F60;   /* JUDUL */
+    --secondaryTextColor: #121212;  /* tekxt biasa */
+
+    --borderColor: #f1f1f1; 
+    --lineColor:  #d9d9d9;
+
+    --primaryBackgroundColor: #fff;
+    --secondaryBackgroundColor: #fbfbfb;
+    --thirdBackgroundColor: #f5f3fe;
+
+    --primaryIconColor: #008083;
+    --primaryIconColorHover: #F78104;
+    --secondaryIconColor: #FAAB36;
+
+    --sectionPadding: 85px 0;
+    --itemBorderRadius: 12px;
+
+    --h1-font-size: 40px;
+    --h2-font-size: 32px;
+    --small-font-size: 14px;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, strong { 
+    color: var(--primaryTextColor)
+}
+
+p {
+    font-size: 15px;
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        width: 90%;
+    }
+}
+
+/* BUTTONS RESUME */
+.btn {
+    padding: 0.6rem 1.5rem;
+    background: var(--primaryIconColor);
+    border: 2px solid var(--borderColor);
+    color: white;
+    cursor: pointer;
+    border-radius: var(--itemBorderRadius);
+    transition: .2s ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
+}
+
+/* Titles */
+
+.section-title {
+    margin: 1rem 0 4rem;
+    font-size: 32px;
+}
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: var(--secondaryTextColor);
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.pre-title::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--secondaryTextColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+/* LAYOUT */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+}
+
+/* Logo and navigation menu */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 48px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.logo img {
+    display: flex;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* .logo a {
+    color: var(--primaryTextColor);
+} */
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--primaryTextColor);
+}
+
+/* BURGER */
+.burger div {
+    width: 30px;
+    height: 3px;
+    background-color: #005F60;
+    margin: 7px;
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.burger {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 33px;
+    right: 35px;
+}
+/* Hero Section */
+#hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-name {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 8px 0 16px;
+}
+
+.hero-name span {
+    color: var(--primaryIconColorHover);
+}
+
+.hero-right img {
+    float: right;
+    margin: 2rem auto;
+    width: 76%;
+}
+
+.hero-rigt {
+    display:flex;
+    justify-content: center;
+}
+
+/* Services */
+#services {
+    background-color: var(--secondaryBackgroundColor);
+    padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+    margin: 0 auto;
+}
+
+.services-title {
+    text-align: center;
+}
+
+.service {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--secondaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+}
+
+.service h4 {
+    margin: 1rem 0;
+    font-size: 22px;
+}
+
+.service-icon {
+    background: var(--primaryTextColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 16px 21px;
+    border-radius: .5rem;
+}
+
+.service-icon svg {
+    fill: white;
+}
+
+/* PORTFOLIO SECTION */
+#portfolios {
+    padding: var(--sectionPadding);
+}
+
+.portfolio {
+    border-radius: var(--itemBorderRadius);
+    overflow: hidden;
+    border: 1px solid var(--borderColor);
+}
+
+.portfolio-cover {
+    height: 250px;
+}
+
+.portfolio-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 2rem 1.5rem;
+}
+
+.portfolio-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio h4 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.portfolio-title a svg:hover {
+fill: var(--primaryIconColorHover);
+}
+
+.portfolio-title a svg {
+    fill: #005F60;
+    transition: 0.2s ease-in-out;
+}
+
+.portfolio-tags {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.portfolio-tags div {
+font-size: 15px;
+font-weight: 500;
+border: 1px solid var(--primaryIconColorHover);
+background-color: #F78104;
+border-radius: var(--itemBorderRadius);
+padding: 7px 16px;
+color: white;
+}
+
+/* EXPERIENCE, EDUCATION AND SKILLS */
+#about {
+    padding: var(--sectionPadding);
+    background: var(--secondaryBackgroundColor);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.experience {
+    display: flex;
+    gap: .7rem;
+}
+
+.experience .line {
+    padding: 0 0.3rem;
+}
+
+.experience .line div {
+    width: 2px;
+    height: 100%;
+    background: var(--primaryIconColor);
+    position: relative;
+}
+
+.experience-title {
+    font-weight: 600;
+    color: #121212;
+}
+.experience-info p {
+    margin: .5rem 0 1.4rem;
+    font-weight: 400;
+    color: #121212;
+}
+
+.experience-years {
+    margin-bottom: 3rem;
+    color: #F78104;
+}
+
+/* TITIK DOT-LINE */
+.experience .line div::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: var(--primaryIconColor);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+}
+
+.about-title {
+   margin-bottom: .7rem;
+   color: #121212;
+}
+
+.about-years {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #F78104;
+}
+
+.about-right p {
+    font-weight: 400;
+    color: #121212;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+.about-list {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-weight: 400;
+    color: #121212;
+    font-size: 16px;
+}
+
+.about-right ul {
+    line-height: 2rem;
+    padding: 1.5rem;
+}
+
+/* CONTACT SECTION */
+
+#contact {
+    padding: var(--sectionPadding);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.contact-form div {
+    margin-bottom: 1.4rem;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: .75rem 1.3rem;
+    font-family: "Poppins",sans-serif;
+    background: var(--secondaryBackgroundColor);
+    border: 2px solid var(--borderColor);
+    border-radius: 3px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1px solid #005F60;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem 1.3rem;
+    background-color: #005F60;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background: var(--primaryIconColorHover);
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+    background: var(--primaryTextColor);
+    width: 53px;
+    height: 53px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item-icon svg {
+    fill: white;
+}
+
+.contact-icon-detail h4 {
+    margin-bottom: 0.6rem;
+}
+
+/* FOOTER SECTION*/
+footer {
+    padding: 4rem 0;
+    background: var(--secondaryBackgroundColor);
+    text-align: center;
+}
+
+.footer-icons {
+    margin-bottom: 1rem;
+}
+
+.footer-icons a {
+    margin: 0 .5rem;
+}
+
+.footer-icons svg {
+    fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+    fill:#005F60;
+}
+
